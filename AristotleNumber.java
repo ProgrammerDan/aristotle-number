@@ -22,15 +22,6 @@ import java.util.*;
  * 1 and 19, with each number represented only once.
  */
 public class AristotleNumber {
-	void printf(int a, int b, int c) {
-		System.out.printf("    %2d  %2d  %2d\n\n",a,b,c);
-	}
-	void printf(int a, int b, int c, int d) {
-		System.out.printf("  %2d  %2d  %2d  %2d\n\n",a,b,c,d);
-	}
-	void printf(int a, int b, int c, int e, int f) {
-		System.out.printf("%2d  %2d  %2d  %2d  %2d\n\n",a,b,c,e,f);
-	}
 	void win() {
 		int z= 0;
 		for (int a = 1; a <= 19; a++)
@@ -100,17 +91,8 @@ public class AristotleNumber {
 			if (!used9.contains(j))
 				if (a + e + j + o + s == 38 && c + f + j + n + q == 38 &&
 					h + i + j + k + l == 38) {
-						printf(a, b, c);
-						printf(d, e, f, g);
-						printf(h, i, j, k, l);
-						printf(m, n, o, p);
-						printf(q, r, s);
 						z++;
-						//System.out.printf("    %2d  %2d  %2d    \n\n", a, b, c);
-						//System.out.printf("  %2d  %2d  %2d  %2d  \n\n", d, e, f, g);
-						//System.out.printf("%2d  %2d  %2d  %2d  %2d\n\n", h, i, j, k, l);
-						//System.out.printf("  %2d  %2d  %2d  %2d  \n\n", m, n, o, p);
-						//System.out.printf("    %2d  %2d  %2d    \n\n", q, r, s);
+System.out.printf("%6d%4d%4d\n\n",a,b,c);System.out.printf("%4d%4d%4d%4d\n\n",d,e,f,g);System.out.printf("%2d%4d%4d%4d%4d\n\n",h,i,j,k, l);System.out.printf("%4d%4d%4d%4d\n\n",m,n,o,p);System.out.printf("%6d%4d%4d\n\n",q,r,s);
 				}
 						}
 						}
