@@ -32,27 +32,27 @@ public class AristotleNumber {
 		System.out.printf("%2d  %2d  %2d  %2d  %2d\n\n",a,b,c,e,f);
 	}
 	void win() {
+		int z= 0;
 		for (int a = 1; a <= 19; a++)
 			for (int b = 1; b <= 19; b++)
 				if (b != a)
 					for (int c = 1; c <= 19; c++)
 						if (c != a && c != b)
-							if (a + b + c == 38) {
-								Set<Integer> used = new HashSet<Integer>();
-								used.add(a);used.add(b);used.add(c);
+							if (a + b + c == 38)
 		for (int d = 1; d <= 19; d++)
-			if (!used.contains(d))
+			if (d != a && d != b && d != c)
 				for (int h = 1; h <= 19; h++)
-					if (h != d  && !used.contains(h))
+					if (h != d && h != a && h != b && h != c)
 						if (a + d + h == 38){
-							Set<Integer> used2 = new HashSet<Integer>(used);
-							used2.add(d); used2.add(h);
+							Set<Integer> used = new HashSet<Integer>();
+							used.add(a);used.add(b);used.add(c);
+							used.add(d);used.add(h);
 		for (int m = 1; m <= 19; m++)
-			if (!used2.contains(m))
+			if (!used.contains(m))
 				for (int q = 1; q <= 19; q++)
-					if (q != m && !used2.contains(q))
+					if (q != m && !used.contains(q))
 						if (h + m + q == 38) {
-							Set<Integer> used3 = new HashSet<Integer>(used2);
+							Set<Integer> used3 = new HashSet<Integer>(used);
 							used3.add(m); used3.add(q);
 		for (int r = 1; r <= 19; r++)
 			if (!used3.contains(r))
@@ -105,6 +105,7 @@ public class AristotleNumber {
 						printf(h, i, j, k, l);
 						printf(m, n, o, p);
 						printf(q, r, s);
+						z++;
 						//System.out.printf("    %2d  %2d  %2d    \n\n", a, b, c);
 						//System.out.printf("  %2d  %2d  %2d  %2d  \n\n", d, e, f, g);
 						//System.out.printf("%2d  %2d  %2d  %2d  %2d\n\n", h, i, j, k, l);
@@ -119,7 +120,7 @@ public class AristotleNumber {
 						}
 						}
 						}
-							}
+		System.out.println("wins: "  + z);
 	}
 
 	public static void main(String[] args) {
