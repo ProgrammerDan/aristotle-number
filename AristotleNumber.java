@@ -1,5 +1,4 @@
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 /**
  * Solving Aristotle's number problem.
  * First observation: there are a strictly constrained number
@@ -23,6 +22,15 @@ import java.util.Set;
  * 1 and 19, with each number represented only once.
  */
 public class AristotleNumber {
+	void printf(int a, int b, int c) {
+		System.out.printf("    %2d  %2d  %2d\n\n",a,b,c);
+	}
+	void printf(int a, int b, int c, int d) {
+		System.out.printf("  %2d  %2d  %2d  %2d\n\n",a,b,c,d);
+	}
+	void printf(int a, int b, int c, int e, int f) {
+		System.out.printf("%2d  %2d  %2d  %2d  %2d\n\n",a,b,c,e,f);
+	}
 	void win() {
 		for (int a = 1; a <= 19; a++)
 			for (int b = 1; b <= 19; b++)
@@ -92,11 +100,16 @@ public class AristotleNumber {
 			if (!used9.contains(j))
 				if (a + e + j + o + s == 38 && c + f + j + n + q == 38 &&
 					h + i + j + k + l == 38) {
-						System.out.printf("    %2d  %2d  %2d    \n\n", a, b, c);
-						System.out.printf("  %2d  %2d  %2d  %2d  \n\n", d, e, f, g);
-						System.out.printf("%2d  %2d  %2d  %2d  %2d\n\n", h, i, j, k, l);
-						System.out.printf("  %2d  %2d  %2d  %2d  \n\n", m, n, o, p);
-						System.out.printf("    %2d  %2d  %2d    \n\n", q, r, s);
+						printf(a, b, c);
+						printf(d, e, f, g);
+						printf(h, i, j, k, l);
+						printf(m, n, o, p);
+						printf(q, r, s);
+						//System.out.printf("    %2d  %2d  %2d    \n\n", a, b, c);
+						//System.out.printf("  %2d  %2d  %2d  %2d  \n\n", d, e, f, g);
+						//System.out.printf("%2d  %2d  %2d  %2d  %2d\n\n", h, i, j, k, l);
+						//System.out.printf("  %2d  %2d  %2d  %2d  \n\n", m, n, o, p);
+						//System.out.printf("    %2d  %2d  %2d    \n\n", q, r, s);
 				}
 						}
 						}
@@ -107,44 +120,6 @@ public class AristotleNumber {
 						}
 						}
 							}
-	}
-
-
-	public int countValidFourples() {
-		int count = 0;
-		for (int d = 1; d <= 19; d++) {
-			for (int e = 1; e <= 19; e++) {
-				if (d == e) continue;
-				for (int f = 1; f <= 19; f++) {
-					if (d == f || e == f) continue;
-					for (int g = 1; g <= 19; g++) {
-						if (d == g || e == g || f == g) continue;
-						if (d + e + f + g == 38) count++;
-					}
-				}
-			}
-		}
-		return count;
-	}
-
-	public int countValidFiveples() {
-		int count = 0;
-		for (int h = 1; h <= 19; h++) {
-			for (int i = 1; i <= 19; i++) {
-				if (h == i) continue;
-				for (int j = 1; j <= 19; j++) {
-					if (h == j || i == j) continue;
-					for (int k = 1; k <= 19; k++) {
-						if (h == k || i == k || j == k) continue;
-						for (int l = 1; l <= 19; l++) {
-							if (h == l || i == l || j == l || k == l) continue;
-							if (h + i + j + k + l == 38) count++;
-						}
-					}
-				}
-			}
-		}
-		return count;
 	}
 
 	public static void main(String[] args) {
