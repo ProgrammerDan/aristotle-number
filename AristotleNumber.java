@@ -93,6 +93,7 @@ Set<Integer> b(Set<Integer>c){return new HashSet<Integer>(c);}
 				if (a + e + j + o + s == 38 && c + f + j + n + q == 38 &&
 					h + i + j + k + l == 38) {
 System.out.printf("%6d%4d%4d\n\n",a,b,c);System.out.printf("%4d%4d%4d%4d\n\n",d,e,f,g);System.out.printf("%2d%4d%4d%4d%4d\n\n",h,i,j,k, l);System.out.printf("%4d%4d%4d%4d\n\n",m,n,o,p);System.out.printf("%6d%4d%4d\n\n",q,r,s);
+					return;
 				}
 						}
 						}
