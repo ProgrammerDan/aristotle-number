@@ -23,6 +23,7 @@ import java.util.*;
  */
 public class AristotleNumber {
 boolean c(Set<Integer>u,int z){return!u.contains(z);}
+Set<Integer> b(Set<Integer>c){return new HashSet<Integer>(c);}
 	void win() {
 		int z= 0;
 		for (int a = 1; a <= 19; a++)
@@ -44,41 +45,41 @@ boolean c(Set<Integer>u,int z){return!u.contains(z);}
 				for (int q = 1; q <= 19; q++)
 					if (q != m && c(used,q))
 						if (h + m + q == 38) {
-							Set<Integer> used3 = new HashSet<Integer>(used);
+							Set<Integer> used3 = b(used);
 							used3.add(m); used3.add(q);
 		for (int r = 1; r <= 19; r++)
 			if (c(used3,r))
 				for (int s = 1; s <= 19; s++)
 					if (s != r && c(used3,s))
 						if (q + r + s == 38) {
-							Set<Integer> used4 = new HashSet<Integer>(used3);
+							Set<Integer> used4 = b(used3);
 							used4.add(r); used4.add(s);
 		for (int p = 1; p <= 19; p++)
 			if (c(used4,p))
 				for (int l = 1; l <= 19; l++)
 					if (l != p && c(used4,l))
 						if (s + p + l == 38) {
-							Set<Integer> used5 = new HashSet<Integer>(used4);
+							Set<Integer> used5 = b(used4);
 							used5.add(p); used5.add(l);
 		for (int g = 1; g <= 19; g++)
 			if (c(used5,g))
 				if (l + g + c == 38) {
 					// outerboards
-					Set<Integer> used6 = new HashSet<Integer>(used5);
+					Set<Integer> used6 = b(used5);
 					used6.add(g);
 		for (int e = 1; e <= 19; e++)
 			if (c(used6,e))
 				for (int f = 1; f <= 19; f++)
 					if (f != e && c(used6,f))
 						if (d + e + f + g == 38) { 
-							Set<Integer> used7 = new HashSet<Integer>(used6);
+							Set<Integer> used7 = b(used6);
 							used7.add(e); used7.add(f);
 		for (int i = 1; i <= 19; i++)
 			if (c(used7,i))
 				for (int n = 1; n <= 19; n++)
 					if (n != i && c(used7,n))
 						if (d + i + n + r == 38 && b + e + i + m == 38) {
-							Set<Integer> used8 = new HashSet<Integer>(used7);
+							Set<Integer> used8 = b(used7);
 							used8.add(i); used8.add(n);
 		for (int o = 1; o <= 19; o++)
 			if (c(used8,o))
@@ -86,7 +87,7 @@ boolean c(Set<Integer>u,int z){return!u.contains(z);}
 					if (k != o && c(used8,k))
 						if (m + n + o + p == 38 && r + o + k + g == 38 &&
 							b + f + k + p == 38) {
-							Set<Integer> used9 = new HashSet<Integer>(used8);
+							Set<Integer> used9 = b(used8);
 							used9.add(o); used9.add(k);
 		for (int j = 1; j <= 19; j++)
 			if (c(used9,j))
